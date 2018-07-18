@@ -51,6 +51,7 @@
           <img width="250" id="imagePreview"  src="uploads/no_preview.png" alt="" />
           <!-- <img width="250" id="imagePreview" style="background:url(uploads/photo01.png)" src="uploads/no_preview.png" alt="" /> -->
         </div>
+        <input type="text" id="tempImagePreview">
         <button  class="btn btn-primary" type="submit" name="submit" id="image-submit">Save</button>
       </form>
       <!-- form-->
@@ -76,7 +77,7 @@
         $('#frame').val('');
       } else {
         var selectedFrame = $('#frame').val();
-        var selectedImage = $('#imagePreview').attr('src');
+        var selectedImage = $('#tempImagePreview').val();
         $('#imagePreview').attr({
           src:'frame/'+selectedFrame,
           style:'background:url('+selectedImage+')'
@@ -91,6 +92,10 @@
           var reader = new FileReader();
 
           reader.onload = function(e) {
+          // set image source -> temporary
+            $('#tempImagePreview').val(e.target.result);
+
+          // set image source -> preview image
             $('#imagePreview').attr('src', e.target.result);
             $('#imagePreview').hide();
             $('#imagePreview').fadeIn(650);

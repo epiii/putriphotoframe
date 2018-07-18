@@ -51,7 +51,7 @@
           <img width="250" id="imagePreview"  src="uploads/no_preview.png" alt="" />
           <!-- <img width="250" id="imagePreview" style="background:url(uploads/photo01.png)" src="uploads/no_preview.png" alt="" /> -->
         </div>
-        <input type="text" id="tempImagePreview">
+        <input type="hidden" id="tempImagePreview">
         <button  class="btn btn-primary" type="submit" name="submit" id="image-submit">Save</button>
       </form>
       <!-- form-->
